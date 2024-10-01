@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -25,8 +26,13 @@ export default function Home() {
     }
   }
 
+  useEffect(() => {
+    router.prefetch('/user-form')
+  }, [router])
+
+
   useEffect(()=>{
-    if(!token){
+    if(!token || token == "undefined"){
       router.push("/")
     }
     else{

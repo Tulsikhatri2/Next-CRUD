@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { isAuth } from "../Components/isAuth";
 import Link from "next/link";
 import { ImHome } from "react-icons/im";
+import LogoutButton from "../Components/LogoutButton";
 
 const UserList = () => {
   const { userData } = useSelector((state) => state.user);
@@ -53,15 +54,7 @@ const UserList = () => {
           <span><Link href="/user-form">/ User From  </Link></span>
           <span className="ml-2"> <Link href="/user-data">/ User List </Link> </span>
           <span className="ml-[60%]">
-          <button 
-            className="text-white bg-red-700 hover:bg-red-800 
-            focus:ring-2 focus:ring-red-300 font-medium rounded-lg 
-            text-sm px-5 py-2.5 h-10 dark:bg-red-600 dark:hover:bg-blue-700 
-            focus:outline-none"
-            onClick={()=>{
-              localStorage.clear()
-              router.push("/")
-            }}>Logout</button>
+          <LogoutButton/>
           </span>
         </p>
       </nav>
@@ -145,4 +138,4 @@ const UserList = () => {
   );
 };
 
-export default isAuth(UserList);
+export default UserList;

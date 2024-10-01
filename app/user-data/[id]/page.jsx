@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { isAuth } from "@/app/Components/isAuth";
 import { ImHome } from "react-icons/im";
 import Link from "next/link";
+import LogoutButton from "../../Components/LogoutButton"
 
 const EditUser = () => {
   const { id } = useParams();
@@ -50,7 +51,8 @@ const EditUser = () => {
           <span className="ml-2"> <Link href="/user-data">/ User List </Link> </span>
           <span className="ml-2">/ Update User </span>
           <span className="ml-[47%]">
-          <button 
+          <LogoutButton/>
+          {/* <button 
             className="text-white bg-red-700 hover:bg-red-800 
             focus:ring-2 focus:ring-red-300 font-medium rounded-lg 
             text-sm px-5 py-2.5 h-10 dark:bg-red-600 dark:hover:bg-blue-700 
@@ -58,7 +60,7 @@ const EditUser = () => {
             onClick={()=>{
               localStorage.clear()
               router.push("/")
-            }}>Logout</button>
+            }}>Logout</button> */}
           </span>
         </p>
       </nav>
@@ -117,4 +119,4 @@ const EditUser = () => {
   );
 };
 
-export default isAuth(EditUser);
+export default EditUser;
