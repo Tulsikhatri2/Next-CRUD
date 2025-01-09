@@ -1,5 +1,5 @@
 "use client"
-import { redirect, usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 
 const Layout = ({children}) => {

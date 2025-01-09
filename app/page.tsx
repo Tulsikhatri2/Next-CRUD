@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -64,7 +63,7 @@ export default function Home() {
           focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700
           dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
           dark:focus:border-blue-500 w-64 m-3 "
-              type="text"
+              type="password"
               name="password"
               placeholder="Password"
               value={password}
@@ -75,13 +74,17 @@ export default function Home() {
         <button
           className="text-white bg-blue-700 hover:bg-blue-800 
       focus:ring-2 focus:ring-blue-300 font-medium rounded-lg 
-      text-sm px-5 py-2.5 me-2 mb-2 mt-12 dark:bg-blue-600 dark:hover:bg-blue-700 
+      text-sm px-5 py-2.5 me-2 mb-2 mt-10 dark:bg-blue-600 dark:hover:bg-blue-700 
       focus:outline-none"
           type="button"
           onClick={handleLogin}
         >
           Login
         </button>
+        <div className="flex flex-col items-center justify-center text-xs mt-5 font-bold text-gray-500">
+          <p>Username: "admin"</p>
+          <p>Password: "123456"</p>
+        </div>
         </div>
     </div>
   );
